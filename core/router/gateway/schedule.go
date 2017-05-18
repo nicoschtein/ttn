@@ -45,7 +45,7 @@ func (i *scheduledItem) Duration() time.Duration {
 const maxUint32 = 1 << 32
 
 func getFullTimestamp(full uint64, lsb uint32) uint64 {
-	if int(lsb)-int(full) > 0 {
+	if int64(lsb)-int64(full) > 0 {
 		return uint64(lsb)
 	}
 	if uint32(full%maxUint32) <= lsb {
